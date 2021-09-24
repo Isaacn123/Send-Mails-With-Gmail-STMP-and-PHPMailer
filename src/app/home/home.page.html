@@ -1,10 +1,3 @@
-<ion-header [translucent]="true">
-  <ion-toolbar>
-    <ion-title>
-      Blank
-    </ion-title>
-  </ion-toolbar>
-</ion-header>
 
 <ion-content [fullscreen]="true">
   <ion-header collapse="condense">
@@ -14,7 +7,57 @@
   </ion-header>
 
   <div id="container">
-    <strong>Ready to create an app?</strong>
+    <!-- <strong>Ready to create an app?</strong>
     <p>Start with Ionic <a target="_blank" rel="noopener noreferrer" href="https://ionicframework.com/docs/components">UI Components</a></p>
+   -->
+
+  <ion-card>
+    <ion-list>
+      <div id="input-container">
+      <ion-label stacked>
+        Username
+      </ion-label>
+      <ion-item id="rounded">
+        <ion-input [(ngModel)]="sendmailData.username" type="text"></ion-input>
+      </ion-item>
+      </div>
+      <div id="input-container">
+        <ion-label >
+         Email
+        </ion-label>
+        <ion-item id="rounded">
+          <ion-input [(ngModel)]="sendmailData.usermail" type="text"></ion-input>
+        </ion-item> 
+       </div>
+     <div id="input-container">
+      <ion-label >
+       Date
+      </ion-label>
+      <ion-item id="rounded">
+        <ion-datetime  [(ngModel)]="sendmailData.date" displayFormat="DDDD, DD MMMM YYYY" pickerFormat="DD MMMM YYYY"></ion-datetime>
+      </ion-item> 
+     </div>
+     
+     <div id="input-container">
+      <ion-label >
+       Message
+      </ion-label>
+      <ion-item id="round">
+        <ion-textarea  [(ngModel)]="sendmailData.message" rows="6" cols="20" id="message" placeholder="Message">
+
+        </ion-textarea>
+      </ion-item> 
+     </div>
+        <div id="input-container">
+        <ion-input id="submit-btn" type="button" value="Send Message" (click)="sendMail()"></ion-input>
+        </div>
+    </ion-list>
+  </ion-card>
   </div>
 </ion-content>
+
+
+
+
+
+
